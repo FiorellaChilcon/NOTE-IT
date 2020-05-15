@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="./new.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://kit.fontawesome.com/0325233556.js" crossorigin="anonymous"></script>
     <title>NOTE-IT</title>
 </head>
+
 <body>
-    <script src="./main.js"></script>
+    <div id="actual-view"></div>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC1kRNCVUKuuNDtFvx073f7cTQ34AaUvzo",
+            authDomain: "note-it-c4eca.firebaseapp.com",
+            databaseURL: "https://note-it-c4eca.firebaseio.com",
+            projectId: "note-it-c4eca",
+            storageBucket: "note-it-c4eca.appspot.com",
+            messagingSenderId: "1085306955309",
+            appId: "1:1085306955309:web:f6a87b30e546a3e705faa4"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script type="module" src="./main.js"></script>
 </body>
+
 </html>

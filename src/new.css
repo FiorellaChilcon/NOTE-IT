@@ -1,0 +1,263 @@
+body{
+    padding: 0;
+    background-color: rgb(77, 80, 80);
+}
+#actual-view{
+    /* border: solid blue; */
+    width: 98vw;
+    height: 96vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modals{
+    background-color: #ffffff;
+    border-radius: 6vh;
+    align-self: flex-end;
+    margin: 5vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-signup{
+    align-self:center;
+    height: 80vh;
+}
+.modal-signin{
+    align-self: flex-end;
+    height: 70vh;
+}
+.modals:hover{
+    -webkit-box-shadow: 0px 0px 10px 15px rgb(51, 51, 51);
+    -moz-box-shadow: 0px 0px 10px 15px rgb(51, 51, 51);
+     box-shadow: 0px 0px 10px 15px rgb(51, 51, 51);
+}
+.modal-signin header{
+    /* border: solid red; */
+    font-size: 5vh;
+    letter-spacing: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(141, 43, 233);
+}
+.modal-signup header h1{
+    text-align: center;
+    font-weight: normal;
+    /* border: solid red; */
+    font-size: 5vh;
+    letter-spacing: 4px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(141, 43, 233);
+}
+.modal-signup header h3{
+    text-align: center;
+    /* border: solid red; */
+    color: rgb(122, 122, 122);
+    font-size: 2.7vh;
+    font-weight: lighter;
+}
+.modal-signin header:hover, .modal-signup header h1:hover{
+    color: rgb(28, 224, 55);
+    cursor: pointer;
+}
+.signup-option p{
+    text-align: center;
+}
+#signin-form, #signup-form{
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20vw;
+    height: 40vh;
+}
+.modals input{
+    width: 15vw;
+    height: 3vh;
+    border: none;
+    padding: 1vh;
+    border-bottom: solid 1px black;
+    font-size: 2.5vh;
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.modals input:hover{
+    border-bottom: solid 1px rgb(53, 228, 77);
+}
+.modals input:focus{
+    outline: none;
+}
+#signin-form button, #signup-form button{
+    background-color: rgb(141, 43, 233);
+    color: whitesmoke;
+    border: none;
+    -webkit-box-shadow: 9px 9px 12px -5px rgba(15, 177, 96, 0.23);
+    -moz-box-shadow: 9px 9px 12px -5px rgba(0,0,0,0.23);
+    box-shadow: 9px 9px 12px -5px rgba(0,0,0,0.23);
+}
+#signup-form button{
+    width: 7vw;
+    height: 6vh;
+}
+#signin-form button{
+    width: 6vw;
+    height: 5vh;
+}
+#signin-form button:hover, #signup-form button:hover{
+    background-color: rgb(28, 224, 55);
+}
+.not-found{
+    /* border: solid red; */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    padding: 0;
+}
+.not-found p{
+    /* border: solid red; */
+    font-size: 8vh;
+    color: rgb(238, 236, 236);
+    margin: 0;
+}
+.not-found p:first-child{
+    font-size: 10vh;
+
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    width: 99vw;
+    height: 15vh;
+    background-color: rgb(141, 43, 233);
+}
+.nav-ul{
+    align-self: flex-end;
+    margin: 0;
+    width: 15vw;
+    height: 15vh;
+    /* border: solid red; */
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-ul li{
+    
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3vh;
+    /* border: solid red; */
+    color: rgb(238, 236, 236);
+}
+.nav-ul li button{
+    border: none;
+    background: none;
+}
+.nav-ul li i{
+    color: rgb(238, 236, 236);
+    font-size: 5vh;
+}
+.nav-ul li i:hover{
+    color:rgb(28, 224, 55);
+}
+.notes-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#notes-container{
+    border-top: solid 3px rgb(14, 154, 209);
+    width: 98vw;
+    height: 60vh;
+    padding: 0;
+}
+#notes-form{
+    width: 30vw;
+    height: 20vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#notes-form div{
+    width: 20vw;
+    height: 15vh;
+    /* border: solid rgb(0, 132, 255); */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#notes-form div input{
+    background-color: #ffffff;
+    width: 15vw;
+    border-radius: 2vh;
+    height: 3vh;
+    border: none;
+    padding: 1vh;
+    font-size: 2.5vh;
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#notes-form div input:focus{
+    outline: none;
+}
+#notes-form button{
+    border: none;
+    background: none;
+}
+#notes-form button i{
+    font-size: 5vh;
+    color: rgb(28, 224, 55);
+}
+#notes-form button:focus{
+    outline: none;
+}
+#notes-form button i:hover{
+    color: rgb(175, 94, 251);
+}
+#notes-list{
+    overflow: auto;
+    /* width: 60vw; */
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: solid red; */
+    margin: 0;
+    list-style: none;
+}
+#notes-list li{
+    margin: 2vh 30vh;
+    padding: 2vh;
+    border-radius: 4vh;
+    background-color: #f8f4f4;
+    width: 25vw;
+    height: 20vh;
+}
+#notes-list li div{
+    padding: 1vh;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    /* width: 25vw; */
+}
+#notes-list li div:last-child{
+    border-top: solid 1px black;
+}
+#notes-list::-webkit-scrollbar {
+    width: 1vh;
+}
+#notes-list::-webkit-scrollbar-thumb {
+    width: 1vh;
+    background-color: rgba(12, 209, 12);
+    border-radius: 1vh;
+}
