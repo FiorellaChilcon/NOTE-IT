@@ -32,6 +32,9 @@ body{
 .logo{
     width: 30vw;
 }
+.logo:hover{
+    filter: hue-rotate(180deg);
+}
 .modal-signup{
     align-self:center;
     height: 80vh;
