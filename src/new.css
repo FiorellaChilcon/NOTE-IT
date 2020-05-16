@@ -23,6 +23,15 @@ body{
     justify-content: center;
     align-items: center;
 }
+.container-modal-signin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 30vw;
+}
 .modal-signup{
     align-self:center;
     height: 80vh;
@@ -235,6 +244,7 @@ nav{
 #notes-list{
     overflow: auto;
     /* width: 60vw; */
+    padding: 0;
     height: 60vh;
     display: flex;
     flex-wrap: wrap;
@@ -283,7 +293,6 @@ nav{
     color: rgba(12, 209, 12);
 }
 .li-note div{
-    /* border: solid red; */
     padding: 2vh;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     width: 27vw;
@@ -292,13 +301,21 @@ nav{
     border-radius: 2vh;
 }
 .li-note div:last-child{
+    /* border: solid red; */
     border-top: solid 2px black;
     margin: 0;
+    height: 10vh;
+    overflow-y: auto;
 }
+[contenteditable="true"]{
+    width: 27vw;
+    height: 10vh;
+    overflow-y: auto;
+} 
 /* .li-note i{
     border: solid red;
 } */
-#notes-list::-webkit-scrollbar {
+#notes-list::-webkit-scrollbar{
     width: 1vh;
 }
 #notes-list::-webkit-scrollbar-thumb {
@@ -309,6 +326,12 @@ nav{
 @media  (min-width: 320px) and (max-width: 700px) {
 #actual-view{
     align-items: center;
+}
+.container-modal-signin{
+    flex-direction: column;
+}
+.logo{
+    width: 25vw;
 }
 .modals{
     margin: auto;
@@ -340,28 +363,27 @@ nav{
     font-size: 4vh;
 }
 nav{
-    height: 8vh;
+    height: 6vh;
 }
 .nav-ul{
     width: 50vw;
-    height: 8vh;
-    /* border: solid red; */
+    height: 6vh;
 }
 .nav-ul li{
     font-size: 2.4vh;
     /* border: solid red; */
 }
 .nav-ul li i{
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 .notes-main-container{
-    /* border: solid red; */
-    height: 92vh;
+    
+    height: 94vh;
 }
 #notes-container{
     border-top: solid 2vh rgb(99, 97, 97);
-    /* border: solid red;  */
-    height: 77vh;
+    /* border: solid rgb(187, 11, 149);  */
+    height: 75vh;
 }
 #notes-form{
     width: 95vw;
@@ -379,17 +401,19 @@ nav{
 }
 #notes-list{
     /* border: solid rgb(0, 132, 255); */
-    height: 75vh;
+    height: 74vh;
 }
 #notes-list li{
-    margin: 1vh 0vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0vh;
     /* border: solid brown; */
     width: 80vw;
     height: 22vh;
 }
 #notes-list li .li-note{
     /* border: solid red; */
-    width: 80vw;
+    width: 70vw;
     height: 20vh;
 }
 .li-options button{
@@ -402,10 +426,15 @@ nav{
 }
 .li-note div{
     /* border: solid pink; */
-    width: 65vw;
+    width: 60vw;
     font-size: 2.3vh;
 }
 .li-note div:last-child{
     border-top: solid 1.2px black;
+    height: 8vh;
 }
+[contenteditable="true"]{
+    width: 60vw;
+    height: 6vh;
+} 
 }

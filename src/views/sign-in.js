@@ -1,6 +1,8 @@
 export default () => {
     const div = document.createElement('div');
     const signinview = `
+    <div><img class="logo" src="../src/img/Drawing.png" alt="logo"></div>
+    <div class="modals modal-signin">
     <header>NOTE IT</header>
     <main>
         <form id="signin-form">
@@ -12,8 +14,9 @@ export default () => {
     <div class="signup-option">
         <p>o bien ingresa con...</p>
         <p>¿No tienes cuenta? <a href="#/sign-up">Regístrate</a> </p>
+    </div>
     </div>`;
-    div.className = 'modals modal-signin';
+    div.className = 'container-modal-signin';
     div.innerHTML = signinview;
     // SIGN IN
     const signinForm = div.querySelector('#signin-form');
