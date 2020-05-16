@@ -16,7 +16,6 @@ body{
 .modals{
     background-color: #ffffff;
     border-radius: 6vh;
-    align-self: flex-end;
     margin: 5vh;
     width: 30vw;
     display: flex;
@@ -306,4 +305,107 @@ nav{
     width: 1vh;
     background-color: rgba(12, 209, 12);
     border-radius: 1vh;
+}
+@media  (min-width: 320px) and (max-width: 700px) {
+#actual-view{
+    align-items: center;
+}
+.modals{
+    margin: auto;
+    width: 90vw;
+}
+.modal-signup header h3{
+    width: 70vw;
+    font-size: 2.4vh;
+}
+.signup-option p{
+    font-size: 2.4vh;
+}
+#signin-form, #signup-form{
+    /* border: solid red; */
+    width: 80vw;
+}
+.modals input{
+    width: 65vw;
+}
+#signin-form button, #signup-form button{
+    font-size: 2vh;
+    width: 30vw;
+}
+#signup-form button{
+    height: 6vh;
+}
+.not-found p{
+    text-align: center;
+    font-size: 4vh;
+}
+nav{
+    height: 8vh;
+}
+.nav-ul{
+    width: 50vw;
+    height: 8vh;
+    /* border: solid red; */
+}
+.nav-ul li{
+    font-size: 2.4vh;
+    /* border: solid red; */
+}
+.nav-ul li i{
+    font-size: 3vh;
+}
+.notes-main-container{
+    /* border: solid red; */
+    height: 92vh;
+}
+#notes-container{
+    border-top: solid 2vh rgb(99, 97, 97);
+    /* border: solid red;  */
+    height: 77vh;
+}
+#notes-form{
+    width: 95vw;
+    height: 15vh;
+    /* border: solid red; */
+}
+#notes-form div{
+    width: 75vw;
+    height: 15vh;
+    /* border: solid rgb(0, 132, 255); */
+}
+#notes-form div input{
+    width: 65vw;
+    height: 2.5vh;
+}
+#notes-list{
+    /* border: solid rgb(0, 132, 255); */
+    height: 75vh;
+}
+#notes-list li{
+    margin: 1vh 0vh;
+    /* border: solid brown; */
+    width: 80vw;
+    height: 22vh;
+}
+#notes-list li .li-note{
+    /* border: solid red; */
+    width: 80vw;
+    height: 20vh;
+}
+.li-options button{
+    margin: 2vh 1vh;
+    /* border: solid firebrick; */
+}
+.li-options button i{
+    padding: 0;
+    font-size: 3vh;
+}
+.li-note div{
+    /* border: solid pink; */
+    width: 65vw;
+    font-size: 2.3vh;
+}
+.li-note div:last-child{
+    border-top: solid 1.2px black;
+}
 }
