@@ -3,7 +3,7 @@ export default () => {
     const appNoteView = `
         <nav>
             <ul class="nav-ul">
-                <li><i class="fas fa-user"></i> <span>User</span></li>
+                <li><i class="fas fa-user"></i> <span id="user-email">User</span></li>
                 <li>
                 <button type="button" id="logout"><i class="fas fa-sign-out-alt"></i></button>
                 </li>

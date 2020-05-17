@@ -8,6 +8,7 @@ export default () => {
         <form id="signin-form">
             <input type="email" id="signin-email" placeholder="Email" required>
             <input type="password" id="signin-password" placeholder="Password" required>
+            <p class="error"></p>
             <button type="submit">Log In</button>
         </form>
     </main>
@@ -27,11 +28,10 @@ export default () => {
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
             console.log(cred.user);
             signinForm.reset();
-            // loginForm.querySelector('.error').innerHTML = '';
-        })
-        // .catch((err) => {
-        //     loginForm.querySelector('.error').innerHTML = err.message;
-        // });;
+            signinForm.querySelector('.error').innerHTML = '';
+        }).catch((err) => {
+            signinForm.querySelector('.error').innerHTML = err.message;
+        });;
     });
     return div;
 }

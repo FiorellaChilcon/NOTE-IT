@@ -34,6 +34,16 @@ body{
 }
 .logo:hover{
     filter: hue-rotate(180deg);
+    transition: 0.70s;
+    -webkit-transition: 0.70s;
+    -moz-transition: 0.70s;
+    -ms-transition: 0.70s;
+    -o-transition: 0.70s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 .modal-signup{
     align-self:center;
@@ -110,6 +120,13 @@ body{
     -moz-box-shadow: 9px 9px 12px -5px rgba(0,0,0,0.23);
     box-shadow: 9px 9px 12px -5px rgba(0,0,0,0.23);
 }
+.error{
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 125, 125);
+    text-align: center;
+    width:29vw;
+}
 #signup-form button{
     width: 7vw;
     height: 6vh;
@@ -157,7 +174,7 @@ nav{
     align-self: flex-end;
     margin: 0;
     padding: 0;
-    width: 15vw;
+    max-width: 50vw;
     height: 15vh;
     /* border: solid red; */
     list-style: none;
@@ -167,7 +184,7 @@ nav{
     align-items: center;
 }
 .nav-ul li{
-    
+    padding: 1.5vh;
     font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 3vh;
     /* border: solid red; */
@@ -279,6 +296,14 @@ nav{
     display: flex;
     flex-direction: column;
 }
+.save-button{
+    border: none;
+    background: none;
+    display: none;
+}
+.appear{
+    display: block;
+}
 .li-options button i{
     visibility: hidden;
     color: cornsilk;
@@ -296,16 +321,17 @@ nav{
     color: rgba(12, 209, 12);
 }
 .li-note div{
+    /* border: solid palegreen; */
     padding: 2vh;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    width: 27vw;
+    width: 28vw;
 }
 .li-note div:first-child{
     border-radius: 2vh;
 }
-.li-note div:last-child{
+.note-content{
     /* border: solid red; */
-    border-top: solid 2px black;
+    border-top: solid 2px rgb(158, 157, 157);
     margin: 0;
     height: 10vh;
     overflow-y: auto;
@@ -369,11 +395,12 @@ nav{
     height: 6vh;
 }
 .nav-ul{
-    width: 50vw;
+    max-width: 80vw;
     height: 6vh;
 }
 .nav-ul li{
     font-size: 2.4vh;
+    padding: 1vh;
     /* border: solid red; */
 }
 .nav-ul li i{
@@ -432,7 +459,7 @@ nav{
     width: 60vw;
     font-size: 2.3vh;
 }
-.li-note div:last-child{
+.note-content{
     border-top: solid 1.2px black;
     height: 8vh;
 }

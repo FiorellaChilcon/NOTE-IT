@@ -9,6 +9,7 @@ export default () => {
         <form id="signup-form">
             <input type="email" id="signup-email" placeholder="Email" required>
             <input type="password" id="signup-password" placeholder="Password" required>
+            <p class="error"></p>
             <button type="submit">Sign up</button>
         </form>
     </main>
@@ -27,20 +28,15 @@ export default () => {
         // create user/ async function wich generates a credential token
         auth.createUserWithEmailAndPassword(email, password)
             .then((cred) => {
-                console.log(cred.user);
-                console.log(cred.user.uid);
                 return db.collection(cred.user.uid).doc('nota 1').set({
                     tittle: 'Bienvenida',
                     content: 'empieza a crear tu primera nota!'
                 });
-            })
-            .then(() => {
+            }).then(() => {
                 signupForm.reset();
-                // signupForm.querySelector('.error').innerHTML = '';
-            })
-            .catch((err) => {
-                console.logerr.message(err.message);
-                // signupForm.querySelector('.error').innerHTML = err.message;
+                signupForm.querySelector('.error').innerHTML = '';
+            }).catch((err) => {
+                signupForm.querySelector('.error').innerHTML = err.message;
             });
     });
     return div;
