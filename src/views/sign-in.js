@@ -12,8 +12,9 @@ export default () => {
             <button type="submit">Log In</button>
         </form>
     </main>
-    <div class="signup-option">
+    <div class="signin-option">
         <p>o bien ingresa con...</p>
+        <button class="signin-google"><i class="fab fa-google-plus"></i></button>
         <p>¿No tienes cuenta? <a href="#/sign-up">Regístrate</a> </p>
     </div>
     </div>`;
@@ -32,6 +33,21 @@ export default () => {
         }).catch((err) => {
             signinForm.querySelector('.error').innerHTML = err.message;
         });;
+    });
+    // GOOGLE SIGN IN
+    const signinGoogle= div.querySelector('.signin-google');
+    signinGoogle.addEventListener('click', () => {
+        firebase.auth().signInWithRedirect(provider).then((result) => {
+            if (result.credential) {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              var token = result.credential.accessToken;
+              console.log(token);
+            }
+            // The signed-in user info.
+            console.log(result.user);
+          }).catch((error) => {
+            console.log(error.message);
+          });;
     });
     return div;
 }

@@ -32,6 +32,7 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         const db = firebase.firestore();
+        const provider = new firebase.auth.GoogleAuthProvider();
     </script>
     <script type="module" src="./main.js"></script>
 </body>
