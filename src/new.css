@@ -23,7 +23,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.container-modal-signin{
+.container-modal-signin, .container-modal-signup{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,11 +32,16 @@ body{
 .logo{
     width: 30vw;
 }
+.logo-signup{
+    width: 27vw;
+}
 .logo-app{
     width: 8vw;
 }
-.logo:hover{
-    filter: hue-rotate(180deg);
+.logo-like{
+    width: 10vw;
+}
+.logo:hover, .logo-app:hover, .logo-signup:hover, .logo-like:hover{
     transition: 0.70s;
     -webkit-transition: 0.70s;
     -moz-transition: 0.70s;
@@ -47,6 +52,12 @@ body{
     -o-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
+}
+.logo:hover, .logo-app:hover{
+    filter: hue-rotate(180deg);
+}
+.logo-signup:hover{
+    filter: hue-rotate(100deg);
 }
 .modal-signup{
     align-self:center;
@@ -548,10 +559,10 @@ nav{
 #actual-view{
     align-items: center;
 }
-.container-modal-signin{
+.container-modal-signin, .container-modal-signup{
     flex-direction: column;
 }
-.logo{
+.logo, .logo-signup{
     width: 25vw;
 }
 .modals{

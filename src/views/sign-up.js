@@ -1,6 +1,8 @@
 export default () => {
     const div = document.createElement('div');
     const signupview = `
+    <div><img class="logo-signup" src="../src/img/logo-signup.png" alt="logo-signup"></div>
+    <div class="modals modal-signup">
     <header>
         <h1>NOTE IT</h1>
         <h3>regístrate para empezar a crear tus notas!</h3>
@@ -16,8 +18,10 @@ export default () => {
     <div class="signup-option">
         <p>Inicia sesión con...</p>
         <p>¿Tienes cuenta? <a href="#/sign-in">Inicia sesión</a> </p>
+    </div>
     </div>`;
-    div.className = 'modals modal-signup';
+    // <div><img class="logo-like" src="../src/img/logo-like.png" alt="logo-signup"></div>
+    div.className = 'container-modal-signup';
     div.innerHTML = signupview;
     // SIGN UP
     const signupForm = div.querySelector('#signup-form');
