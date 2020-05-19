@@ -21,7 +21,8 @@ auth.onAuthStateChanged((user) => {
         if (user.metadata.creationTime == user.metadata.lastSignInTime) {
             return db.collection(user.uid).doc('nota 1').set({
                 tittle: 'Bienvenida',
-                content: 'empieza a crear tu primera nota!'
+                content: 'empieza a crear tu primera nota!',
+                photo: ''
             });
         }
     } else {

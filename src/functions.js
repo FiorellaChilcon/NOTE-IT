@@ -43,6 +43,9 @@ export default (dataAndId) => {
         });
         removeButton.addEventListener('click', () => {
             db.collection(dataAndId[1]).doc(doc.id).delete();
+            if (note.photo !== '') {
+                storage.ref().child(note.photo).delete();
+            }
         });
         return li;
     });
