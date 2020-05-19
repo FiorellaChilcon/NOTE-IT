@@ -13,6 +13,18 @@ export default (dataAndId) => {
         <button><i class="fas fa-pen edit"></i></button>
     </div>`;
         li.innerHTML = html;
+        const liNote = li.querySelector('.li-note');
+        if (note.photo !== '') {
+            const img = document.createElement('img');
+            img.className = 'photo-post';
+            img.alt = 'image';
+            storage.ref().child(note.photo).getDownloadURL().then((url) => {
+                img.src = url;
+            }).catch((err) => {
+                console.log(err.message)
+            });
+            liNote.appendChild(img);
+        }
         const editButton = li.querySelector('.edit');
         const divNoteContent = li.querySelector('.note-content');
         const saveButton = li.querySelector('.save-button');

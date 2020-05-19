@@ -435,15 +435,32 @@ nav{
     align-items: center;
 }
 #notes-form div{
+    padding: 0;
     width: 20vw;
-    height: 15vh;
+    height: 20vh;
     /* border: solid rgb(0, 132, 255); */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
-#notes-form div input{
+#notes-form div label{
+    /* text-align: center; */
+    padding: 0;
+    /* border: solid rgb(0, 132, 255); */
+    width: auto;
+    height: 4vh;
+}
+#photo{
+    display: none;
+}
+.fa-camera-retro{
+    margin: 0;
+    padding: 0;
+    color: rgb(16, 214, 16);
+    font-size: 4vh;
+}
+#tittle, #content{
     background-color: #ffffff;
     width: 15vw;
     border-radius: 2vh;
@@ -483,22 +500,28 @@ nav{
     list-style: none;
 }
 #notes-list li{
-    margin: 2vh 30vh;
+    margin: 1vh 30vh;
+    padding: 0vh;
     /* border: solid brown; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 40vw;
-    height: 26vh;
+    height: 33vh;
 }
 #notes-list li .li-note{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     /* border: solid red; */
     padding: 0;
     border-radius: 2vh;
     background-color: #f8f4f4;
     width: 30vw;
-    height: 25vh;
+    max-height: 33vh;
 }
 .li-options{
     /* border: solid rgb(21, 255, 0); */
@@ -549,10 +572,11 @@ nav{
     width: 27vw;
     height: 10vh;
     overflow-y: auto;
-} 
-/* .li-note i{
-    border: solid red;
-} */
+}
+.photo-post{
+    max-width: 8vh;
+    max-height: 8vh;
+}
 #notes-list::-webkit-scrollbar{
     width: 1vh;
 }

@@ -31,6 +31,8 @@ export default () => {
                 <div>
                     <input type="text" id="tittle" placeholder="tittle" required>
                     <input type="text" id="content" placeholder="start writting your note..." required>
+                    <input type="file" value="upload" id="photo">
+                    <label for="photo"><i class="fas fa-camera-retro"></i></label>
                 </div>
                 <button type="submit"><i class="fas fa-plus-circle"></i></button>
             </form>
@@ -85,24 +87,32 @@ export default () => {
             });
             if (user.displayName !== null) {
                 formDisplayName.classList.add('hide');
-                userName.innerHTML = `user name: ${user.displayName}`
+                userName.innerHTML = `user name: ${user.displayName}`;
                 userEmail.innerHTML = user.displayName;
             } else {
                 userEmail.innerHTML = user.email;
             }
+            // UPLOAD FILES
+            const uploadPhoto = div.querySelector('#photo');
+            uploadPhoto.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                const refPath = `${user.uid}/${file.name}`;
+                uploadPhoto.name = refPath;
+                storage.ref(refPath).put(file);
+            });
             // CREATE FORM
             const createForm = div.querySelector('#notes-form');
             createForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 db.collection(user.uid).add({
-                    // it can be also called with dot notation createForm.tittle
                     tittle: createForm['tittle'].value,
-                    content: createForm['content'].value
+                    content: createForm['content'].value,
+                    photo: createForm['photo'].name
                 }).then(() => {
                     createForm.reset();
                 }).catch((err) => {
                     console.log(err.message);
-                })
+                });
             });
         }
     });
