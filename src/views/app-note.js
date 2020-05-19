@@ -1,5 +1,4 @@
 import renderNote from '../functions.js'
-
 export default () => {
     const div = document.createElement('div');
     const appNoteView = `
@@ -68,19 +67,19 @@ export default () => {
             const formDisplayName = divAccount.querySelector('.form-display-name');
             const accountBtn = div.querySelector('#account-btn');
             accountBtn.addEventListener('click', () => {
-                navSection.innerHTML= '';
+                navSection.innerHTML = '';
                 navSection.appendChild(divAccount);
             });
-            
+
             const userName = divAccount.querySelector('#user-name');
             formDisplayName.addEventListener('submit', (e) => {
                 e.preventDefault();
                 user.updateProfile({
                     displayName: formDisplayName['display-name'].value,
                 }).then(() => {
-                formDisplayName.classList.add('hide');
-                userName.innerHTML = `user name: ${user.displayName}`
-                userEmail.innerHTML = user.displayName;
+                    formDisplayName.classList.add('hide');
+                    userName.innerHTML = `user name: ${user.displayName}`
+                    userEmail.innerHTML = user.displayName;
                 });
                 formDisplayName.reset();
             });
@@ -107,59 +106,63 @@ export default () => {
             });
         }
     });
-     // DISPLAY THEME
-     const divtheme = document.createElement('div');
-            divtheme.className = "div-theme";
-            const themeHtml = `
-            <div class="theme-option one">
-    <div></div>
-    <div></div>
-</div>
-<div class="theme-option two">
-    <div></div>
-    <div></div>
-</div>
-<div class="theme-option three">
-    <div></div>
-    <div></div>
-</div>
-<div class="theme-option four">
-    <div></div>
-    <div></div>
-</div>
+    // DISPLAY THEME
+    const divtheme = document.createElement('div');
+    divtheme.className = "div-theme";
+    const themeHtml = `
+    <label>
+        <input type="radio" name="theme" value="rgb(44, 159, 253)">
+        <div class="theme-option one">
+            <div></div>
+            <div></div>
+        </div>
+    </label>
+    <label>
+        <input type="radio" name="theme" value="rgb(241, 73, 96)">
+        <div class="theme-option two">
+            <div></div>
+            <div></div>
+        </div>
+    </label>
+    <label>
+        <input type="radio" name="theme" value="rgb(248, 179, 19)">
+        <div class="theme-option three">
+            <div></div>
+            <div></div>
+        </div>
+    </label>
+    <label>
+        <input type="radio" name="theme" value="rgb(141, 43, 233)">
+        <div class="theme-option four">
+            <div></div>
+            <div></div>
+        </div>
+    </label>
             `;
-            divtheme.innerHTML = themeHtml;
-     const theme = div.querySelector('#theme');
-     theme.addEventListener('click', () => {
-        navSection.innerHTML= '';
+    divtheme.innerHTML = themeHtml;
+    const theme = div.querySelector('#theme');
+    theme.addEventListener('click', () => {
+        navSection.innerHTML = '';
         navSection.appendChild(divtheme);
-     });
+    });
+    // THEMES
     const mainNav = div.querySelector('.main-nav');
-     const oneTheme = divtheme.querySelector('.one');
-     oneTheme.addEventListener('click', () => {
-         mainNav.classList.add('nav-one');
-         mainNav.classList.remove('nav-two', 'nav-three', 'nav-four');
-     });
-     const twoTheme = divtheme.querySelector('.two');
-     twoTheme.addEventListener('click', () => {
-         mainNav.classList.add('nav-two');
-         mainNav.classList.remove('nav-one', 'nav-three', 'nav-four');
-     });
-     const threeTheme = divtheme.querySelector('.three');
-     threeTheme.addEventListener('click', () => {
-         mainNav.classList.add('nav-three');
-         mainNav.classList.remove('nav-one', 'nav-two', 'nav-four');
-     });
-     const fourTheme = divtheme.querySelector('.four');
-     fourTheme.addEventListener('click', () => {
-         mainNav.classList.add('nav-four');
-         mainNav.classList.remove('nav-one', 'nav-two', 'nav-three');
-     });
+    const radio = divtheme.querySelectorAll('input[type=radio]');
+    radio.forEach(x => {
+        x.addEventListener('click', () => {
+            if (x.checked) {
+                const color = x.value;
+                localStorage.setItem('bgcolor', color);
+                mainNav.style.backgroundColor = color;
+            }
+        })
+    });
     // LOG OUT
     const logout = div.querySelector('#logout');
     logout.addEventListener('click', () => {
         auth.signOut()
             .then(() => {
+                window.history.back();
                 console.log('user signed out');
             });
     });
@@ -169,7 +172,7 @@ export default () => {
     displaySettings.addEventListener('click', () => {
         settingsLayout.classList.add('appear-flex');
     });
-    
+
     const closeSettings = div.querySelector('.close-settings');
     closeSettings.addEventListener('click', () => {
         settingsLayout.classList.remove('appear-flex');

@@ -13,6 +13,9 @@ body{
     flex-direction: column;
     justify-content: center;
 }
+input[type=radio]{
+    display: none;
+}
 .modals{
     background-color: #ffffff;
     border-radius: 6vh;
@@ -198,18 +201,6 @@ nav{
     padding: 0;
     width: 100vw;
     height: 16vh;
-    background-color: rgb(141, 43, 233);
-}
-.nav-one{
-    background-color: rgb(44, 159, 253);
-}
-.nav-two{
-    background-color: rgb(241, 73, 96);
-}
-.nav-three{
-    background-color: rgb(248, 179, 19);
-}
-.nav-four{
     background-color: rgb(141, 43, 233);
 }
 .nav-ul{

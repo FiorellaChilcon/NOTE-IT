@@ -9,10 +9,21 @@ const init = () => {
 window.addEventListener('load', init);
 auth.onAuthStateChanged((user) => {
     if (user) {
-        console.log(user.displayName)
-        console.log(user);
+        // console.log(user.displayName);
+        // console.log(user.metadata.creationTime);
+        // console.log(user.metadata.lastSignInTime);
+        // console.log(db.collection(user.uid));
         window.location.hash = '#/appNote';
         changeView(window.location.hash);
+        const mainNav = document.querySelector('.main-nav');
+        const currentColor = localStorage.getItem('bgcolor');
+        mainNav.style.backgroundColor = currentColor;
+        if (user.metadata.creationTime == user.metadata.lastSignInTime) {
+            return db.collection(user.uid).doc('nota 1').set({
+                tittle: 'Bienvenida',
+                content: 'empieza a crear tu primera nota!'
+            });
+        }
     } else {
         window.location.hash = '#/';
         changeView(window.location.hash);

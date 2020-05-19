@@ -27,7 +27,7 @@ export default () => {
         const email = signinForm['signin-email'].value;
         const password = signinForm['signin-password'].value;
         auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            console.log(cred.user);
+            // console.log(cred.user);
             signinForm.reset();
             signinForm.querySelector('.error').innerHTML = '';
         }).catch((err) => {
@@ -44,7 +44,8 @@ export default () => {
               console.log(token);
             }
             // The signed-in user info.
-            console.log(result.user);
+            // console.log(result.user);
+            // console.log(result.user.uid);
           }).catch((error) => {
             console.log(error.message);
           });;

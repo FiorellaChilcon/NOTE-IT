@@ -32,12 +32,7 @@ export default () => {
         const password = signupForm['signup-password'].value;
         // create user/ async function wich generates a credential token
         auth.createUserWithEmailAndPassword(email, password)
-            .then((cred) => {
-                return db.collection(cred.user.uid).doc('nota 1').set({
-                    tittle: 'Bienvenida',
-                    content: 'empieza a crear tu primera nota!'
-                });
-            }).then(() => {
+            .then(() => {
                 signupForm.reset();
                 signupForm.querySelector('.error').innerHTML = '';
             }).catch((err) => {
@@ -45,19 +40,13 @@ export default () => {
             });
     });
     // GOOGLE SIGN IN
-    const signinGoogle= div.querySelector('.signin-google');
+    const signinGoogle = div.querySelector('.signin-google');
     signinGoogle.addEventListener('click', () => {
         firebase.auth().signInWithPopup(provider).then((result) => {
-            if (result.credential) {
-              // This gives you a Google Access Token. You can use it to access the Google API.
-              var token = result.credential.accessToken;
-              console.log(token);
-            }
-            // The signed-in user info.
-            console.log(result.user);
-          }).catch((error) => {
+           console.log(result.user);
+        }).catch((error) => {
             console.log(error.message);
-          });;
+        });;
     });
     return div;
 };
