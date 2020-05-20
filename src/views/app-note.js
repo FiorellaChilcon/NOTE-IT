@@ -15,6 +15,7 @@ export default () => {
                         <ul class="setting-options">
                           <li id="account-btn"><i class="fas fa-users-cog"></i>Account</li>
                           <li id="theme"><i class="fas fa-brush"></i>Themes</li>
+                          <li id="delete-account"><i class="fas fa-exclamation-triangle"></i>Danger</li>
                         </ul>
                       </div>
                      <section id="nav-section"></section>
@@ -33,6 +34,7 @@ export default () => {
                     <input type="text" id="content" placeholder="start writting your note..." required>
                     <input type="file" value="upload" id="photo">
                     <label for="photo"><i class="fas fa-camera-retro"></i></label>
+                    <p id="preview"></p>
                 </div>
                 <button type="submit"><i class="fas fa-plus-circle"></i></button>
             </form>
@@ -72,7 +74,6 @@ export default () => {
                 navSection.innerHTML = '';
                 navSection.appendChild(divAccount);
             });
-
             const userName = divAccount.querySelector('#user-name');
             formDisplayName.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -92,13 +93,31 @@ export default () => {
             } else {
                 userEmail.innerHTML = user.email;
             }
+            // DEELETE ACCOUNT
+            const deleteAccount = div.querySelector('#delete-account');
+            const btntag = document.createElement('button');
+            btntag.id = 'deletebtn';
+            btntag.textContent = 'DELETE ACCOUNT';
+            deleteAccount.addEventListener('click', () => {
+                navSection.innerHTML = '';
+                navSection.appendChild(btntag);
+            });
+            btntag.addEventListener('click', () => {
+                user.delete().then(() => {
+                    alert('user deleted');
+                }).catch((error) => {
+                    alert(error.message);
+                });
+            });
             // UPLOAD FILES
+            const preview = div.querySelector('#preview');
             const uploadPhoto = div.querySelector('#photo');
             uploadPhoto.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 const refPath = `${user.uid}/${file.name}`;
                 uploadPhoto.name = refPath;
                 storage.ref(refPath).put(file);
+                preview.innerHTML = `<img src=${URL.createObjectURL(file)} id="preview-img" alt="preview">`
             });
             // CREATE FORM
             const createForm = div.querySelector('#notes-form');
@@ -110,6 +129,7 @@ export default () => {
                     photo: createForm['photo'].name
                 }).then(() => {
                     createForm.reset();
+                    preview.innerHTML = '';
                 }).catch((err) => {
                     console.log(err.message);
                 });

@@ -16,6 +16,22 @@ body{
 input[type=radio]{
     display: none;
 }
+#preview{
+    /* border: solid blue; */
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    left: 32vw;
+}
+#preview-img{
+    margin: 0;
+    padding: 0;
+    /* border: solid blue; */
+    max-width: 5vw;
+    max-height: 10vh;
+}
 .modals{
     background-color: #ffffff;
     border-radius: 6vh;
@@ -39,7 +55,7 @@ input[type=radio]{
     width: 27vw;
 }
 .logo-app{
-    width: 8vw;
+    width: 6vw;
 }
 .logo-like{
     width: 10vw;
@@ -289,6 +305,19 @@ nav{
     width: 30vw;
     height: 60vh;
 }
+#deletebtn{
+    background-color: rgba(255, 38, 0, 0.87);
+    color: rgb(245, 240, 240);
+    font-size: 2vh;
+    border-radius: 2vh;
+    height: 8vh;
+    width: 15vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#deletebtn:hover{
+    background-color: rgba(255, 38, 0, 0.747);
+}
 .div-account{
     /* border: solid red; */
     display: flex;
@@ -305,7 +334,7 @@ nav{
     /* border: solid white; */
     list-style: none;
     display: flex;
-    height: 13vh;
+    height: 18vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -461,14 +490,17 @@ nav{
     font-size: 4vh;
 }
 #tittle, #content{
-    background-color: #ffffff;
-    width: 15vw;
-    border-radius: 2vh;
-    height: 3vh;
     border: none;
-    padding: 1vh;
+    border-bottom: solid 1px rgb(212, 212, 212);
+    background: none;
+    padding: 0;
+    width: 15vw;
+    height: 3vh;
     font-size: 2.5vh;
     font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#notes-form div input::placeholder{
+    color: rgb(206, 201, 201);
 }
 #notes-form div input:focus{
     outline: none;
@@ -508,7 +540,7 @@ nav{
     justify-content: center;
     align-items: center;
     width: 40vw;
-    height: 33vh;
+    max-height: 60vh;
 }
 #notes-list li .li-note{
     display: flex;
@@ -521,7 +553,7 @@ nav{
     border-radius: 2vh;
     background-color: #f8f4f4;
     width: 30vw;
-    max-height: 33vh;
+    max-height: 60vh;
 }
 .li-options{
     /* border: solid rgb(21, 255, 0); */
@@ -562,10 +594,10 @@ nav{
     border-radius: 2vh;
 }
 .note-content{
-    /* border: solid red; */
+    /* border: solid rgb(136, 100, 184); */
     border-top: solid 2px rgb(158, 157, 157);
     margin: 0;
-    height: 10vh;
+    max-height: 10vh;
     overflow-y: auto;
 }
 [contenteditable="true"]{
@@ -574,8 +606,8 @@ nav{
     overflow-y: auto;
 }
 .photo-post{
-    max-width: 8vh;
-    max-height: 8vh;
+    max-width: 20vh;
+    max-height: 20vh;
 }
 #notes-list::-webkit-scrollbar{
     width: 1vh;
@@ -594,6 +626,10 @@ nav{
 }
 .logo, .logo-signup{
     width: 25vw;
+}
+.logo-app{
+    /* border: solid red; */
+    width: 11vw;
 }
 .modals{
     margin: auto;
@@ -637,19 +673,20 @@ nav{
     left: 90vw;
 }
 nav{
-    height: 6vh;
+    height: 8vh;
+    /* border: solid red; */
 }
 .nav-ul{
     max-width: 80vw;
-    height: 6vh;
+    height: 8vh;
 }
 .nav-ul li{
-    font-size: 2.4vh;
-    padding: 1vh;
+    font-size: 3vh;
+    padding: auto;
     /* border: solid red; */
 }
 .nav-ul li i{
-    font-size: 2.5vh;
+    font-size: 3vh;
 }
 .div-account{
     font-size: 2vh;
@@ -675,7 +712,12 @@ nav{
 }
 .setting-options{
     /* border: solid white; */
-    height: 12vh;
+    height: 17vh;
+}
+#deletebtn{
+    font-size: 2vh;
+    height: 8vh;
+    width: 30vw;
 }
 .setting-options li i{
     margin-left: 1.7vh;
@@ -690,13 +732,13 @@ nav{
     font-size: 2.1vh;
 }
 .notes-main-container{
-    
-    height: 94vh;
+    /* border: solid rgb(187, 11, 149);  */
+    height: 92vh;
 }
 #notes-container{
-    border-top: solid 2vh rgb(99, 97, 97);
+    border-top: solid 2px rgb(129, 129, 129);
     /* border: solid rgb(187, 11, 149);  */
-    height: 75vh;
+    height: 73vh;
 }
 #notes-form{
     width: 95vw;
@@ -709,8 +751,18 @@ nav{
     /* border: solid rgb(0, 132, 255); */
 }
 #notes-form div input{
+    /* border: solid rgb(0, 132, 255); */
     width: 65vw;
     height: 2.5vh;
+}
+#preview{
+    left: 54vw;
+    top: 17vh;
+}
+#preview-img{
+    /* border: solid blue; */
+    max-width: 10vw;
+    max-height: 10vh;
 }
 #notes-list{
     /* border: solid rgb(0, 132, 255); */
@@ -719,15 +771,15 @@ nav{
 #notes-list li{
     justify-content: center;
     align-items: center;
-    margin: 0vh;
+    margin: 1vh 0;
     /* border: solid brown; */
-    width: 80vw;
-    height: 22vh;
+    width: 85vw;
+    max-height: 46vh;
 }
 #notes-list li .li-note{
     /* border: solid red; */
     width: 70vw;
-    height: 20vh;
+    max-height: 46vh;
 }
 .li-options button{
     margin: 2vh 1vh;
@@ -744,7 +796,11 @@ nav{
 }
 .note-content{
     border-top: solid 1.2px black;
-    height: 8vh;
+    max-height: 8vh;
+}
+.photo-post{
+    max-width: 30vh;
+    max-height: 30vh;
 }
 [contenteditable="true"]{
     width: 60vw;

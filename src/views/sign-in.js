@@ -35,20 +35,20 @@ export default () => {
         });;
     });
     // GOOGLE SIGN IN
-    const signinGoogle= div.querySelector('.signin-google');
+    const signinGoogle = div.querySelector('.signin-google');
     signinGoogle.addEventListener('click', () => {
-        firebase.auth().signInWithRedirect(provider).then((result) => {
+        firebase.auth().signInWithPopup(provider).then((result) => {
             if (result.credential) {
-              // This gives you a Google Access Token. You can use it to access the Google API.
-              var token = result.credential.accessToken;
-              console.log(token);
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                console.log(token);
             }
             // The signed-in user info.
             // console.log(result.user);
             // console.log(result.user.uid);
-          }).catch((error) => {
+        }).catch((error) => {
             console.log(error.message);
-          });;
+        });;
     });
     return div;
 }
